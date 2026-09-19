@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050B18;
+  --color-surface: #08152A;
+  --color-panel: #0B1D36;
+  --color-electric: #00A8FF;
+  --color-cyan: #00F5FF;
+  --color-bright: #2979FF;
+  --color-textMain: #EAF6FF;
+  --color-textSecondary: #7892AD;
+  --color-error: #FF3158;
+  --color-success: #00FFB3;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-textMain font-sans antialiased selection:bg-electric selection:text-background;
+    background-image: radial-gradient(circle at 50% 0%, rgba(0, 168, 255, 0.05), transparent 70%);
+    background-attachment: fixed;
+  }
+}
+
+@utility neon-text-electric {
+  text-shadow: 0 0 5px rgba(0, 168, 255, 0.5), 0 0 10px rgba(0, 168, 255, 0.3);
+}
+@utility neon-text-cyan {
+  text-shadow: 0 0 5px rgba(0, 245, 255, 0.5), 0 0 10px rgba(0, 245, 255, 0.3);
+}
+@utility neon-text-error {
+  text-shadow: 0 0 5px rgba(255, 49, 88, 0.5), 0 0 10px rgba(255, 49, 88, 0.3);
+}
+
+@utility neon-border-electric {
+  box-shadow: 0 0 5px rgba(0, 168, 255, 0.3), inset 0 0 5px rgba(0, 168, 255, 0.3);
+}
+
+@utility neon-border-cyan {
+  box-shadow: 0 0 5px rgba(0, 245, 255, 0.3), inset 0 0 5px rgba(0, 245, 255, 0.3);
+}
